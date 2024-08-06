@@ -1,0 +1,54 @@
+---
+layout: layouts/_base.njk
+headerText: About
+introductionBlurb: |
+  We are a design clinic for new legal concepts that instantiate innovative ownership models. 
+
+  We work in four stages:
+
+  1. **Open Submission:** Anyone can propose new legal concepts or needs for us to take on, and we accept those that meet certain criteria (e.g., novelty, alignment, real world use cases, potential impact, feasibility) and collaborate on the co-design. 
+
+  2. **Legal Design:** We co-design legal templates and contractual arrangements for real-world use cases that may serve as references for implementation.
+  
+      - Research: The team researches existing laws and precedents, analyzes similar concepts or previous attempts, and identifies potential stakeholders and their contexts.
+  
+      - Drafts: The team refines the original concept based on research findings,  drafts a preliminary legal framework or model for the concept, identifies potential challenges and solutions, and analyzes the concept's implications and behavior given existing laws.
+  
+      - Stakeholder Consultation: The team engages with relevant experts, practitioners, and potential end-users; gathers feedback and insights on the concept's practicality and potential impact; and refines the concept based on stakeholder input.
+
+  3. **Peer Review:** We invite external legal experts to review our outputs. We incorporate their feedback, which may include cautions or even rejection of the idea, and make necessary revisions.
+
+  4. **Matchmaking:** We then hand things off to pro-bono or low-cost lawyers to implement with committed clients.
+---
+
+<!-- prettier-ignore -->
+{% import "components/logo.njk" as logo %}
+<!-- prettier-ignore -->
+{% import "components/menu.njk" as menu %}
+<!-- prettier-ignore -->
+{% import "components/footer.njk" as footer %}
+
+<!-- prettier-ignore -->
+{{ menu.render() }}
+<div
+  class="relative grid grid-cols-layout-4 lg:grid-cols-layout-12 grid-rows-auto/auto content-between min-h-screen py-margin lg:py-lg/margin bg-golden-fizz"
+>
+  <header class="col-span-columns mb-8">
+    <h1 class="mt-12 font-display uppercase text-size-display lg:text-size-lg/display break-words">
+      About
+    </h1>
+  </header>
+  <div
+    class="col-span-columns lg:col-start-column-1 lg:col-end-column-8 space-y-line-3/2"
+  >
+    <div class="markdown markdown-sm">
+      {{ introductionBlurb | markdown | safe }}
+    </div>
+  </div>
+</div>
+<!-- prettier-ignore -->
+{{ footer.render() }}
+<script>
+  // prettier-ignore
+  {% include "components/menu.js" %}
+</script>

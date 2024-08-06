@@ -1,0 +1,47 @@
+---
+layout: layouts/_base.njk
+title: Events
+headerText: Events
+---
+
+<!-- prettier-ignore -->
+{% import "components/logo.njk" as logo %}
+<!-- prettier-ignore -->
+{% import "components/menu.njk" as menu %}
+<!-- prettier-ignore -->
+{% import "components/footer.njk" as footer %}
+
+<!-- prettier-ignore -->
+{{ menu.render() }}
+<div
+  class="relative grid grid-cols-layout-4 lg:grid-cols-layout-12 grid-rows-auto/auto content-between min-h-screen py-margin lg:py-lg/margin bg-golden-fizz"
+>
+  <header class="col-span-columns mb-8">
+    <h1 class="mt-12 font-display uppercase text-size-display lg:text-size-lg/display break-words">
+      Events
+    </h1>
+    <h2 class="my-24">More information coming soon</h2>
+  </header>
+</div>
+<!-- prettier-ignore -->
+{{ footer.render() }}
+<script>
+  var collapsibles = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < collapsibles.length; i++) {
+    collapsibles[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "grid") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "grid";
+      }
+    });
+  }
+</script>
+<script>
+  // prettier-ignore
+  {% include "components/menu.js" %}
+</script>

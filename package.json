@@ -1,0 +1,53 @@
+{
+  "name": "legal-studio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "build:images": "node ./src/site/images.js",
+    "build:site": "npx @11ty/eleventy",
+    "build": "npm run build:images; npm run build:site",
+    "serve": "npx @11ty/eleventy --serve",
+    "serve:dev": "RXC_DEV=true npm run serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.4",
+    "htmlnano": "^2.1.0",
+    "js-beautify": "^1.15.1",
+    "js-yaml": "^4.1.0",
+    "katex": "^0.16.10",
+    "lodash.chunk": "^4.2.0",
+    "luxon": "^3.4.4",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-texmath": "^1.0.0",
+    "markdown-it-toc-done-right": "^4.2.0",
+    "ncp": "^2.0.0",
+    "nunjucks": "^3.2.4",
+    "postcss": "^8.4.40",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-mixins": "^10.0.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-prettify": "^0.3.4",
+    "posthtml": "^0.16.6",
+    "posthtml-alt-always": "^1.0.1",
+    "posthtml-link-noreferrer": "^1.0.10",
+    "prettier": "^3.2.5",
+    "rss-parser": "^3.13.0",
+    "sharp": "^0.33.3",
+    "tailwindcss": "^3.4.7",
+    "terser": "^5.30.3",
+    "uslug": "^1.0.4"
+  }
+}

@@ -1,0 +1,174 @@
+---
+layout: layouts/_base.njk
+title: Partial Common Ownership
+headerText: Partial Common Ownership
+templatesBlurb: |
+  Below is a database of templates for people to pick up and edit in order to set up legal arrangements for partial common ownership.
+permanentCommunity: |
+  - The trustee
+   
+    - Establishing a permanent or long-term trust effectuate the community’s decisions and hold title to assets
+
+  - Defining the community
+
+    - In general
+
+    - Variations for different kinds of property
+
+      - Of land
+
+      - Of an artist’s cooperative
+
+      - Of a business venture
+
+      - Of intellectual property
+
+  - The community’s governance
+
+    - In general
+
+    - Variations:
+
+      - By appointee
+
+      - By decision system
+
+  - The community’s powers
+
+    - Setting the parameters of the PCO license
+
+      - Eligibility to hold a PCO license
+
+      - Turnover rate
+
+      - Auction type and periodicity
+
+      - Special currencies and non-monetary systems
+
+      - Deviations from the results of PCO auctions
+
+      - Investment incentives
+
+  - The community’s dissolution
+pcoLicense: |
+  - The Licensee’s Powers in general
+  - Variations for different kinds of property
+    - Of land
+    - Of an artist’s cooperative
+    - Of a corporate share
+    - Of intellectual property
+faircloudsBlurb: |
+  - Becoming a steward 
+  
+    - There are two ways to become a steward. (1) becoming steward of an existing cell, or (2) creating a new cell.
+  
+    - The purchaser of a cell becomes a steward of the Salinas Grandes project until the beginning of the next cycle. 
+  
+    - Multiple cells can be stewarded at once.
+  
+  - Steward benefits, rights and responsibilities
+  
+    - The stewards receive a package of digital representations of that drawing (See Appendix) with their purchase. 
+    
+    - The steward may reproduce the drawing and exhibit it publicly, but may not commercialize it. Except, the steward may create new digital artworks based upon the cloud drawing, if they use the PCO Art system and within that system designate the Fairclouds community (Aerocene Foundation, RxC, and Serpentine Arts Technologies) as the beneficiary Community. (See Appendix). 
+    
+    - Stewards are asked to support the Community by bringing attention to the Salinas Grandes by exhibiting the drawings. Their integral involvement in the project is reflected in the fact that they receive a credit corresponding to a substantial part of the future cycle’s stewardship fee. This encourages stewards to remain connected to the project.
+    
+    - The steward will receive regular updates via a newsletter and/or dedicated blog and/or Discord channel.
+    
+    - The steward will receive invitations to specific future events organized by the Community.
+  
+  - End of cycle
+  
+    - The cycle ends at the same time for each “group” of licenses. E.g., if part of the salt flat is unlocked in the first public sale, all those cells will come to the end of their cycle at the same time.
+    
+    - The Community decides on a value increase at least 1 month before the close of the cycle. 
+    
+    - Incumbent stewards get an opportunity to renew their stewardship. This may be set up to happen automatically by default but stewards can opt for it not to happen automatically. 
+  
+      - The incumbent steward may renew their stewardship at 50% of the new Pubic Value.
+    
+      - If the incumbent stewards do not accept these offers, and the stewardship cycle’s end date is reached, the steward seats go on public sale.
+  
+  - At the public sale, the steward seats are re-sold. 
+  
+    - The prior stewards receive a portion of the new sale price (50%) in Faircloud vouchers . This is a recognition of their contribution to the project as a steward. 
+    
+    - These tokens can be used to buy more stewardship licenses but are non-convertible and have no real-world monetary value. Any transfer or exchange outside of Fairclouds itself is strictly prohibited.
+    
+    - If the steward does not renew and no new steward comes in after a two-week public sale window, the cell becomes blank and “unstewarded”. The old steward does not receive a portion of future sales, but the old steward retains a credit for 50% of the amount they originally paid (not the new public value); they can apply this to future cell purchases. The Community can decide a new value for the license or it defaults to the same price as the previous cycle.
+---
+
+<!-- prettier-ignore -->
+{% import "components/logo.njk" as logo %}
+<!-- prettier-ignore -->
+{% import "components/menu.njk" as menu %}
+<!-- prettier-ignore -->
+{% import "components/footer.njk" as footer %}
+
+<!-- prettier-ignore -->
+{{ menu.render() }}
+<div
+  class="relative grid grid-cols-layout-4 lg:grid-cols-layout-12 grid-rows-auto/auto content-between min-h-screen py-margin lg:py-lg/margin bg-golden-fizz"
+>
+  <header class="col-span-columns mb-8">
+    <h1 class="mt-12 font-display uppercase text-size-display lg:text-size-lg/display break-words">
+      Partial Common Ownership
+    </h1>
+  </header>
+  <div
+    class="col-span-columns lg:col-start-column-1 lg:col-end-column-8 space-y-line-3/2"
+  >
+    <h2 class="font-bold uppercase">Templates</h2>
+    <div class="markdown markdown-sm">
+      {{ templatesBlurb | markdown | safe }}
+    </div>
+
+    <div>
+        <h3 class="cursor-pointer collapsible">1. The Permanent Community</h3>
+        <div class="hidden markdown markdown-sm ml-8">
+        {{ permanentCommunity | markdown | safe }}
+        </div>
+
+        <div class="col-span-columns my-4 lg:border-b"></div>
+
+        <h3 class="cursor-pointer collapsible">2. Partial Common Ownership License</h3>
+        <div class="hidden markdown markdown-sm ml-8">
+        {{ pcoLicense | markdown | safe }}
+        </div>
+    </div>
+    
+    <h2 class="font-bold uppercase">Implementations</h2>
+
+    <div>
+        <h3 class="cursor-pointer collapsible">1. Fairclouds</h3>
+        <div class="hidden markdown markdown-sm ml-8">
+        {{ faircloudsBlurb | markdown | safe }}
+        </div>
+
+        <div class="col-span-columns my-4 lg:border-b"></div>
+    </div>
+  </div>
+</div>
+<!-- prettier-ignore -->
+{{ footer.render() }}
+<script>
+  var collapsibles = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < collapsibles.length; i++) {
+    collapsibles[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "grid") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "grid";
+      }
+    });
+  }
+</script>
+<script>
+  // prettier-ignore
+  {% include "components/menu.js" %}
+</script>

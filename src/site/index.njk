@@ -1,0 +1,41 @@
+---
+layout: layouts/_base.njk
+headerText: Legal Design Studio
+introductionBlurb: |
+  Capitalism is as much a legal system as an economic one. Therefore, organizations trying to stretch its capacities and question its assumptions are often held back by the difficulty and expense of innovative legal work, such as developing custom contracts and licenses. 
+
+  Private law offers a bottom-up approach to legal design that doesn't require litigation or permission, making it an existing tool that can be used to drive positive change.
+---
+
+<!-- prettier-ignore -->
+{% import "components/logo.njk" as logo %}
+<!-- prettier-ignore -->
+{% import "components/menu.njk" as menu %}
+<!-- prettier-ignore -->
+{% import "components/footer.njk" as footer %}
+
+<!-- prettier-ignore -->
+{{ menu.render() }}
+<div
+  class="relative grid grid-cols-layout-4 lg:grid-cols-layout-12 grid-rows-auto/auto content-between min-h-screen py-margin lg:py-lg/margin bg-golden-fizz"
+>
+  <header class="col-span-columns mb-8">
+    <h1 class="mt-12 font-display uppercase text-size-display lg:text-size-lg/display break-words">
+      Legal Design Studio
+    </h1>
+    <h2 class="my-12">Private law innovations for public benefit.</h2>
+  </header>
+  <div
+    class="col-span-columns lg:col-start-column-1 lg:col-end-column-8 space-y-line-3/2"
+  >
+    <div class="markdown markdown-sm">
+      {{ introductionBlurb | markdown | safe }}
+    </div>
+  </div>
+</div>
+<!-- prettier-ignore -->
+{{ footer.render() }}
+<script>
+  // prettier-ignore
+  {% include "components/menu.js" %}
+</script>

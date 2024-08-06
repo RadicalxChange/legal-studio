@@ -1,0 +1,45 @@
+<!-- prettier-ignore -->
+{% import "components/logo.njk" as logo %}
+
+<!-- prettier-ignore -->
+{% macro render() %}
+<footer id="footer" class="flex flex-col lg:min-h-screen">
+  <div
+    class="flex-grow grid grid-cols-layout-4 lg:grid-cols-layout-12 grid-rows-footer lg:grid-rows-none content-between min-h-screen lg:min-h-0 pt-margin lg:pt-lg/margin pb-2"
+  >
+    <div
+      class="col-span-columns lg:col-start-column-1 lg:col-end-gutter-6 mb-8 lg:mb-0"
+    >
+      <a class="flex justify-center lg:justify-start" href="/">{{
+        logo.render(classes="logo-no-min-width")
+      }}</a>
+    </div>
+    <ul
+      class="col-span-columns lg:col-start-column-7 lg:col-end-margin-2 flex flex-col justify-between max-h-96 mx-auto lg:mx-0 text-center lg:text-left text-size-1 lg:text-size--1 space-y-4"
+    >
+      <li class="uppercase">
+        <a href="/" class="thick-link">Home</a>
+      </li>
+      <li class="uppercase">
+        <a href="/our-work" class="thick-link">Our Work</a>
+      </li>
+      <li class="uppercase">
+        <a href="/events" class="thick-link">Events</a>
+      </li>
+      <li class="uppercase">
+        <a href="/privacy-policy" class="thick-link">Privacy Policy</a>
+      </li>
+    </ul>
+    <div class="col-span-columns mt-8">
+      <p class="text-center text-size--4">
+        © 2021 RadicalxChange Foundation Ltd.
+      </p>
+      <p class="text-center text-size--4">
+        RadicalxChange Foundation Ltd., a 501(c)(3) nonprofit organization, does
+        not support or oppose candidates for public office or political parties.
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- prettier-ignore -->
+{% endmacro %}

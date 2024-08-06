@@ -1,0 +1,184 @@
+/* Apply styles to rendered markdown */
+
+.markdown {
+  @apply text-size-0;
+
+  header {
+    @apply mb-12;
+
+    h1 {
+      @apply mb-12;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  p {
+    @apply mt-markdown-md;
+  }
+
+  h2,
+  h3,
+  h4 {
+    margin-top: 3em;
+  }
+
+  h1 + h2,
+  h2 + h3,
+  h3 + h4 {
+    @apply mt-markdown-md;
+  }
+
+  ul,
+  ol {
+    @apply mt-markdown-md;
+  }
+
+  li {
+    @apply my-markdown-sm;
+  }
+
+  li > ul,
+  li > ol {
+    @apply mt-markdown-sm mb-markdown-md;
+  }
+
+  li > p {
+    @apply mt-markdown-sm;
+  }
+
+  li > p:last-child {
+    @apply mb-markdown-md;
+  }
+
+  img,
+  table {
+    @apply my-markdown-md;
+  }
+
+  blockquote {
+	   @apply pl-4 m-4 border-l-2;
+  }
+
+  .no-y-margin {
+    @apply my-0 !important;
+    @apply mx-auto !important;
+  }
+
+  .twitter-tweet {
+    @apply mt-markdown-md !important;
+    @apply mb-markdown-md !important;
+  }
+
+  hr {
+    @apply my-markdown-lg;
+  }
+
+  > header + *,
+  > *:first-child {
+    @apply mt-0;
+  }
+
+  > *:last-child {
+    @apply mb-0;
+  }
+
+  ul {
+    @apply list-outside list-disc;
+    padding-left: 1.2em;
+  }
+
+  ol {
+    @apply list-outside list-decimal;
+    padding-left: 1.2em;
+  }
+
+  .list-aligned {
+    @apply list-inside;
+    padding-left: 0;
+  }
+
+  ul > li {
+    padding-left: 0.5em;
+  }
+
+  ol > li {
+    padding-left: 0.5em;
+  }
+
+  table {
+    @apply table-auto;
+
+    th {
+      @apply px-2 pb-2;
+    }
+
+    td {
+      @apply p-2;
+    }
+
+    td {
+      @apply border;
+    }
+  }
+
+  h1 {
+    @apply font-display text-size-display;
+    @apply lg:text-size-lg/display;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply uppercase;
+    @apply break-words;
+  }
+
+  img {
+    @apply border rounded;
+    @apply mx-auto;
+  }
+
+  p {
+    @apply break-words;
+  }
+
+  strong {
+    @apply font-medium;
+  }
+
+  a:not(.thick-link) {
+    text-decoration: underline;
+  }
+
+  h2,
+  h3,
+  h4 {
+    scroll-margin-top: 1em;
+  }
+
+  &.markdown-sm {
+    @apply text-size--1;
+  }
+
+  &.markdown-xs {
+    @apply text-size--4;
+  }
+
+  .html {
+    @apply mt-markdown-md;
+
+    p {
+      @apply mt-0;
+    }
+
+    h2,
+    h3,
+    h4 {
+      @apply mt-0;
+    }
+  }
+}
