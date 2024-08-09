@@ -16,9 +16,8 @@ const dirToPipeline = {
 // Fully reinit outputDir every time
 if (fs.existsSync(outputDir)) {
   fs.rmSync(outputDir, { recursive: true });
-} else {
-  fs.mkdirSync(outputDir, { recursive: true });
 }
+fs.mkdirSync(outputDir, { recursive: true });
 
 // Iterate over inputDir
 fs.readdir(inputDir, function (err, files) {
